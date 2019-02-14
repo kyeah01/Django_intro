@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block title %}Date & Weather{% endblock %}
+{% block body %}
+    오늘은 {{ time }}<br>
+    날씨 정보
+    {{ weather }}<br>
+    온도는 섭씨 {{ temp }}도
+{% endblock %}
