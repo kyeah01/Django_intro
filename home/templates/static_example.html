@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+<!--무조건 extends가 제일 위에-->
+
+{% load static %}
+<!--로드를 시켜줘야 스태틱을 쓸수 있음-->
+
+{% block title %} STATIC {% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'style.css' %}" type="text/css" />
+{% endblock %}
+
+{% block body %}
+    <!--img source 주의-->
+    <img src="{% static '다운로드.png' %}" alt='image'></img>
+{% endblock %}

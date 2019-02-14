@@ -39,7 +39,13 @@ def user_create(request):
     nickname = request.POST.get('nickname')
     password = request.POST.get('password')
     return render(request, 'user_create.html', {'nickname':nickname, 'password':password})
-    
+
+
+
+# 2019 02 14. 목요일시작
+
+
+
 def template_example(request):
     my_list = ['짜장면', '탕수육', '짬뽕', '양장피']
     my_sentence = 'Life is short, you need python'
@@ -53,3 +59,6 @@ def template_example(request):
                     'empty_list': empty_list,
                     'datetimenow' : datetimenow
                     })
+
+def static_example(request):
+    return render(request, 'static_example.html')
