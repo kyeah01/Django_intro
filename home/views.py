@@ -1,13 +1,15 @@
 from django.shortcuts import render, HttpResponse
 from pprint import pprint
 import random
+from datetime import datetime
 
 # Create your views here.
 def index(request):
     # print(request)
     # print(type(request))
     # pprint(request.META)
-    return HttpResponse('Welcome to Django!')
+    # return HttpResponse('Welcome to Django!')
+    return render(request, 'index.html')
     
 def dinner(request):
     menu = ['슈프림치킨', '철판볶음밥', '연어', '소고기', '장조림']
@@ -37,3 +39,17 @@ def user_create(request):
     nickname = request.POST.get('nickname')
     password = request.POST.get('password')
     return render(request, 'user_create.html', {'nickname':nickname, 'password':password})
+    
+def template_example(request):
+    my_list = ['짜장면', '탕수육', '짬뽕', '양장피']
+    my_sentence = 'Life is short, you need python'
+    messages = ['apple', 'banana', 'cherry', 'mango']
+    empty_list = []
+    datetimenow = datetime.now()
+    return render(request, 'template_example.html',
+                    {'my_list':my_list,
+                    'my_sentence':my_sentence,
+                    'messages': messages,
+                    'empty_list': empty_list,
+                    'datetimenow' : datetimenow
+                    })
